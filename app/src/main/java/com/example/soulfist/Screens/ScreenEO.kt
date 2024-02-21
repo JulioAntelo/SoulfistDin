@@ -1,10 +1,13 @@
 package com.example.soulfist.Screens
 
 import android.annotation.SuppressLint
+import android.media.Image
 import android.util.Log
 import android.view.RoundedCorner
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -15,11 +18,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -34,13 +39,71 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.soulfist.R
+import com.example.soulfist.Routes.Routes
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenEO(navController: NavController) {
-    
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ){
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween 
+        ) {
+            Button(
+                onClick = { navController.navigate(Routes.screeninicial.route) }
+            ) {
+                Text(text = "volver al inicio")
+            }
+
+            Spacer(modifier = Modifier.width(16.dp)) // Añadir espacio entre el botón y el Box
+
+            Box(
+                modifier = Modifier
+                    .background(color = Color.Gray)
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = "Guia EO Soulfist",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.wrapContentSize()
+                )
+            }
+            Image(
+                painter = painterResource(id = R.drawable.mokoko_genkidama), // Reemplaza R.drawable.tu_imagen con la referencia a tu imagen
+                contentDescription = null, // Agrega una descripción si es necesario
+                modifier = Modifier.size(120.dp) // Puedes ajustar el tamaño según sea necesario
+            )
+        }
+        Row (){
+            Box(
+                modifier = Modifier
+                    .background(color = Color.Gray)
+                    .padding(16.dp)
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center // Centra el contenido dentro del Box
+            ) {
+                Text(
+                    text = "STATS \n 1800+ swiftness \n 600+ crit",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.wrapContentSize()
+                )
+            }
+        }
+        Spacer(modifier = Modifier.width(25.dp))
+        Image(
+            painter = painterResource(id = R.drawable.engravings_sf_eo),
+            contentDescription = null,
+            modifier = Modifier.size(600.dp)
+        )
+    }
+
 }

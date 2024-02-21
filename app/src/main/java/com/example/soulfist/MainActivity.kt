@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.soulfist.Routes.Routes
 import com.example.soulfist.Screens.ScreenEO
 import com.example.soulfist.Screens.ScreenInicio
+import com.example.soulfist.Screens.ScreenRS
 import com.example.soulfist.ui.theme.SoulfistTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,7 +31,8 @@ class MainActivity : ComponentActivity() {
                     val navcontroller = rememberNavController()
                     NavHost(navController = navcontroller, startDestination = Routes.screeninicial.route){
                         composable(Routes.screeninicial.route) { ScreenInicio(navController = navcontroller) }
-
+                        composable(Routes.screenEO.route){ ScreenEO(navController = navcontroller)}
+                        composable(Routes.screenRS.route){ ScreenRS(navController = navcontroller)}
                     }
                 }
             }
