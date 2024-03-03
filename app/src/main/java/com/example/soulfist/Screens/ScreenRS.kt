@@ -101,7 +101,7 @@ fun ScreenRS(navController : NavController) {
         Image(
             painter = painterResource(id = R.drawable.engravings_sf_rs),
             contentDescription = null,
-            modifier = Modifier.size(600.dp)
+            modifier = Modifier.size(650.dp)
         )
     }
 }

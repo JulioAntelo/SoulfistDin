@@ -29,15 +29,15 @@ import com.example.soulfist.Routes.Routes
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScreenInicio(navController: NavHostController) {
-    Row (){
-        Button(onClick = { navController.navigate(Routes.screenEO.route) }) {
-            Text(text = "Ir a Energy Overflow")
-        }
-        Button(onClick = { navController.navigate(Routes.screenRS.route) }) {
-            Text(text = "Ir a Robust Spirit")
+    Column() {
+        Row() {
+            Button(onClick = { navController.navigate(Routes.screenEO.route) }) {
+                Text(text = "Ir a Energy Overflow")
+            }
+            Button(onClick = { navController.navigate(Routes.screenRS.route) }) {
+                Text(text = "Ir a Robust Spirit")
+            }
         }
     }
-
-
 }
 

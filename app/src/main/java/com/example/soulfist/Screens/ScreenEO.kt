@@ -102,7 +102,7 @@ fun ScreenEO(navController: NavController) {
         Image(
             painter = painterResource(id = R.drawable.engravings_sf_eo),
             contentDescription = null,
-            modifier = Modifier.size(600.dp)
+            modifier = Modifier.size(650.dp)
         )
     }
 
